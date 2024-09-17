@@ -81,6 +81,7 @@ async function run() {
       const menuItem = req.body;
       const result = await menuCollection.insertOne(menuItem);
       res.send(result);
+      console.log(result);
     });
 
     // update menu
