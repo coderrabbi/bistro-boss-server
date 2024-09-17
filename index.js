@@ -75,9 +75,8 @@ async function run() {
       const query = { _id: new ObjectId(id) };
       const result = await menuCollection.findOne(query);
       res.send(result);
-      console.log(result);
     });
-    // post menu items
+    // post menu
     app.post("/menu", verifyToken, verifyAdmin, async (req, res) => {
       const menuItem = req.body;
       const result = await menuCollection.insertOne(menuItem);
